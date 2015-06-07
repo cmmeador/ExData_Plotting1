@@ -8,7 +8,7 @@ unlink(temp)
 mydata2 <- subset(mydata, mydata$Date %in% dateRange)
 # add a column using strptime
 mydata2$timestamp <- strptime(paste(mydata2$Date, mydata2$Time), format="%d/%m/%Y %H:%M:%S")
-# plot a line graph of global_active_power against the timestamp
+# plot three line graphs of sub metering values against the timestamp
 
 # this results in an unfortunate cut-off label in the PNG
 plot(mydata2$Sub_metering_1 ~ as.POSIXct(mydata2$timestamp), type="l", ylab="Engergy sub metering",xlab="")
